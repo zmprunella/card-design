@@ -1,0 +1,123 @@
+body {
+  display: grid; /* Using CSS Grid instead of Flexbox */
+  margin: 10vh;
+  justify-content: center; /* Centers the cards horizontally */
+  background-color: #ffffff;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  margin: 5vh;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  overflow: hidden;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 2); /* This adds a box shadow */
+}
+
+.red-bar {
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  background-color: #ff0000;
+  z-index: 1;
+}
+
+.top-bar {
+  top: 0;
+}
+
+.bottom-bar {
+  bottom: 0;
+}
+
+.red-triangle-top-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 0;
+  border-color: #ff4444 transparent transparent transparent;
+
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.blue-triangle-top-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 0;
+  border-color: #4a44ff transparent transparent transparent;
+
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.blue-triangle-top-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 20px 20px;
+  border-color: transparent transparent #0000ff transparent;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.blue-triangle-bottom-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 0 20px;
+  border-color: transparent transparent transparent #0000ff;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.red-triangle-bottom-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 100px 100px;
+  border-color: transparent transparent #ff4444 transparent;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+.blue-triangle-bottom-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 100px 100px;
+  border-color: transparent transparent #4a44ff transparent;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  body {
+    flex-direction: row; /* Now the cards will be laid out horizontally */
+  }
+
+  .card {
+    margin-bottom: 0; /* Remove the bottom margin */
+    margin-right: 20px; /* Add some space on the right of each card */
+  }
+}
